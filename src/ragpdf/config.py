@@ -15,8 +15,8 @@ class Settings(BaseSettings):
     embedding_model: str = "all-MiniLM-L6-v2"
 
     # Storage
-    chroma_dir: Path = Path("data/chroma")
-    pdf_dir: Path = Path("data/pdfs")
+    chroma_dir: Path = Path(__file__).resolve().parents[2]/"data"/"chroma"
+    pdf_dir: Path = Path(__file__).resolve().parents[2]/ "data" / "pdfs"
 
     # Chunking / retrieval
     chunk_size: int = 800
