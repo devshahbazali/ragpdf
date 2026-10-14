@@ -29,13 +29,11 @@ def load_pdf(path:Path)-> list[Document]:
         text=text.strip()
         if not text:
             continue
+        documents.append(Document(page=i,
+                                      total_pages=total_pages,
+                                      source=path.name,
+                                      text=text))
 
-
-    documents.append(Document(page=i,
-                              total_pages=total_pages,
-                              source=path.name,
-                              text=text))
-   
     return documents
 
 def load_all_pdfs(pdf_dir:Path | None=None)->list[Document]:
@@ -52,10 +50,12 @@ def load_all_pdfs(pdf_dir:Path | None=None)->list[Document]:
         return[]
 
     all_docs:list[Document]=[]
+    
     for path in pdf_paths:
         docs=load_pdf(path)
         all_docs.extend(docs)
         console.print( f"[green]✓[/green] {path.name}: "
             f"{len(docs)} pages with text")
+        
     return all_docs
         
