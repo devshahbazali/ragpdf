@@ -6,7 +6,7 @@ class chunk(BaseModel):
     text:str=Field(...,description="chuck of the document text")
     source:str=Field(...,description="file name of source pdf")
     page:int= Field(..., ge=1,description="page number in source pdf")
-    chunk_index=Field(...,ge=0,description="position of this chunck in the page")
+    chunk_index:int=Field(...,ge=0,description="position of this chunck in the page")
     total_pages:int= Field(..., ge=1, description="total pages in the souurce pdf")
     @property
     def chunk_id(self):
