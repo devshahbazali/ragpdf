@@ -55,7 +55,7 @@ def _split_recursive(text :str,
         #if there is a buffer add to the chunk
         if buffer:
             chunks.append(buffer)
-        return chunks
+    return chunks
 
 def split_text(text:str,
                chunk_size:int|None=None,
