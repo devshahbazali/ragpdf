@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     #then the following variable will be overridden from env
       # Ollama
     ollama_host: str = "http://localhost:11434"
-    ollama_model: str = "llama3.2"
+    ollama_model: str = "llama3.2:1b"
 
     # Embeddings
     embedding_model: str = "all-MiniLM-L6-v2"
